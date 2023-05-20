@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    height: 100%; 
+    width: 100%;
+}
+header{
+    width: 100%;
+    height: 10%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sadrzaj{
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url('Untitled\ design\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #333;
+}
+
+footer{
+    width: 100%;
+    height: 8%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    padding-top: 14px;
+    font-size: 14px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 2.5px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav{
+    margin-left: 620px;
+    margin-top: 19px;
+    height: 100%;
+    width: 50%;
+
+}
+
+.levi{
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 100%;
+    width: 50%;}
+
+    .sadrzaj h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .sadrzaj p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: #555;
+    }
+
+    .meni{
+        padding-top: 10%;
+        
+        width: 100%;
+        height: 100%;
+        background-image: url('Untitled\ design\ \(1\).jpg');
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: #333;
+
+
+    }
+    .polam,
+    .drugopola {
+       justify-content: flex-start;
+      display: flex;
+    }
+    
+    .jelo1,
+    .jelo2,
+    .jelo3,
+    .jelo4,
+    .jelo5,
+    .jelo6 {
+      
+        margin-left: 10%;
+        height: 250px;
+        width: 250px;
+      background-color: #fff;
+     margin-bottom: 5px;
+     background-color: #fff;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+    }
+    
+    .active {
+       
+        font-weight: bold;
+        text-decoration: underline;
+        color: blue;
+      }
+      
+    
+      .error-kime, 
+      .error-ime, 
+      .error-mail,
+      .error-p,
+      .error-l{
+        
+        font-size: 5px;
+        color:red;
+      }
+

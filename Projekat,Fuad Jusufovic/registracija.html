@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kifu Food</title>
+    <link rel="icon" href="Kifu.jpg">
+    <script src="script.js" defer ></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="levi">
+                <img style="height: 41px;width: 41px;border-radius: 50%;margin-top: 3px;margin-left: 20px;" src="Kifu.jpg" alt="Kifu Food Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="menu.html">Meni</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="registracija.html">Registracija</a></li>
+                    <li><a href="oautoru.html">O autoru</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div style="padding-top: 20px;height: 700px;" class="sadrzaj">
+            
+<form action="/action_page.php">
+    <div  style= "width: 500px;background-color: white;padding: 1px; margin-left: 400px;border: solid black 2px;border-radius: 5px;" class="container">
+      <h1>Registracija</h1> <br>
+      
+      <label for="email"><b>Korisničko Ime</b></label> 
+      <input type="text" placeholder="Unesite Korisničko Ime" name="kime" id="kime" required>  
+      <p id="korisnicko-ime-error" class="error-kime"></p>
+      
+      <label for="email"><b>Ime</b></label>
+      <input type="text" placeholder="Unesite Ime" name="ime" id="ime" required> 
+      <p id="ime-error" class="error-ime"></p>
+
+      <label for="email"><b>Prezime</b></label>
+      <input type="text" placeholder="Unesite Prezime" name="prezime" id="prezime" required> 
+      <p id="prezime-error" class="error-p"></p>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Unesite Email" name="email" id="email" required> 
+      <p id="email-error" class="error-mail"></p>
+  
+  
+      <label for="psw"><b>Lozinka</b></label>
+      <input type="password" placeholder="Unesite Lozinku" name="psw" id="psw" required>
+      <p id="lozinka-error" class="error-l"></p>
+  
+  
+      <label for="psw-repeat"><b>Ponovite Lozinku</b></label>
+      <input type="password" placeholder="Ponovite Lozinku" name="psw-repeat" id="psw-repeat" required> <br>  <br>
+  
+      
+      
+  
+      <button style="background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      " type="submit"id="registerBtn" class="registerbtn">Registruj se</button>
+    
+
+</div>
+    
+    
+        </div>
+        <footer> <p>&copy; 2023 Fuad Jusufovic. Sva prava zadržana.</p> </footer>
+
+    </div>
+    <script>
+        var korisnickoImeInput = document.getElementById("kime");
+        var errorElement = document.getElementById("korisnicko-ime-error");
+    
+        korisnickoImeInput.addEventListener("input", proveriKorisnickoIme);
+    
+        function proveriKorisnickoIme() {
+          var korisnickoIme = korisnickoImeInput.value;
+    
+          var korisnickoImePattern = /^@[a-zA-Z0-9]{3,11}[0-9]$/;
+    
+          if (!korisnickoImePattern.test(korisnickoIme)) {
+            errorElement.textContent = "Greska, korisnicko ime mora počinjati znakom @, imati 5-13 karaktera i zavrsavati brojem.";
+          } else {
+            errorElement.textContent = "";
+          }
+        }
+
+        var imeInput = document.getElementById("ime");
+var imeErrorElement = document.getElementById("ime-error");
+
+imeInput.addEventListener("input", proveriIme);
+
+function proveriIme() {
+  var ime = imeInput.value.trim();
+
+  if (ime.length < 3 || !ime[0].match(/[A-ZČĆŽŠĐ]/)) {
+    imeErrorElement.textContent = "Greska, ime mora poceti velikim pocetnim slovom i imati najmanje 3 karaktera.";
+  } else {
+    imeErrorElement.textContent = "";
+  }
+}
+
+var emailInput = document.getElementById("email");
+var emailErrorElement = document.getElementById("email-error");
+
+emailInput.addEventListener("input", proveriEmail);
+
+function proveriEmail() {
+  var email = emailInput.value.trim();
+
+  var validacija = /^[A-Za-z]+([.-]?[A-Za-z]+)*@[A-Za-z]+([.-]?[A-Za-z]+)*(\.[A-Za-z]{2,})+$/;
+
+  if (!validacija.test(email)) {
+    emailErrorElement.textContent = "Greska, email mora ispunjavati sledece uslove: nekoliko slova i barem jedan znak (moze doci srednja crta ili tacka od znakova), nakon cega dolazi znak @ nakon koga dolazi nekoliko karaktera, pa tacka, pa nekoliko karaktera.";
+  } else {
+    emailErrorElement.textContent = "";
+  }
+}
+var prezimeInput = document.getElementById("prezime");
+var prezimeErrorElement = document.getElementById("prezime-error");
+
+prezimeInput.addEventListener("input", proveriPrezime);
+
+function proveriPrezime() {
+  var prezime = prezimeInput.value.trim();
+
+  var validacija = /^[A-Z][a-zA-Z]*ić$/;
+
+  if (!validacija.test(prezime)) {
+    prezimeErrorElement.textContent = "Greska, prezime mora ispunjavati sledece uslove: pocinje velikim pocetnim slovom, ima najmanje 5 karaktera i zavrsava na 'ić'.";
+  } else {
+    prezimeErrorElement.textContent = "";
+  }
+}
+var lozinkaInput = document.getElementById("psw");
+
+var lozinkaErrorElement = document.getElementById("lozinka-error");
+
+lozinkaInput.addEventListener("input", proveriLozinku);
+
+function proveriLozinku() {
+  var lozinka = lozinkaInput.value.trim();
+
+  var validacija = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$/;
+
+  if (!validacija.test(lozinka)) {
+    lozinkaErrorElement.textContent = "Greska, lozinka mora ispunjavati sledece uslove: mora imati na prvoj i poslednjoj poziciji veliko slovo, mora imati bar jedan znak i biti duza od 8 karaktera.";
+  } else {
+    lozinkaErrorElement.textContent = "";
+  }
+}
+function proveriFormu() {
+  proveriKorisnickoIme();
+  proveriIme();
+  proveriPrezime();
+  proveriEmail();
+  proveriLozinku();
+
+  var korisnickoImeGreska = errorElement.textContent;
+  var imeGreska = imeErrorElement.textContent;
+  var prezimeGreska = prezimeErrorElement.textContent;
+  var emailGreska = emailErrorElement.textContent;
+  var lozinkaGreska = lozinkaErrorElement.textContent;
+
+  var registerBtn = document.getElementById("registerBtn");
+
+  if (
+    korisnickoImeGreska ||
+    imeGreska ||
+    prezimeGreska ||
+    emailGreska ||
+    lozinkaGreska
+  ) {
+    registerBtn.disabled = true;
+  } else {
+    registerBtn.disabled = false;
+  }
+}
+korisnickoImeInput.addEventListener("blur", proveriFormu);
+imeInput.addEventListener("blur", proveriFormu);
+prezimeInput.addEventListener("blur", proveriFormu);
+emailInput.addEventListener("blur", proveriFormu);
+lozinkaInput.addEventListener("blur", proveriFormu);
+var forma = document.querySelector("form");
+forma.addEventListener("submit", function (e) {
+  e.preventDefault();
+  // Slanje forme na novu stranicu
+  window.location.href = "uspesno.html";
+});
+
+
+      </script>
+</body>
+</html>
